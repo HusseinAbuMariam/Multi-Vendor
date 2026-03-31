@@ -1,0 +1,110 @@
+/* Category Navigation Component */
+.category-nav {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
+  border-bottom: 2px solid #132f48;
+  padding: 1rem 0;
+  position: sticky;
+  top: 100px; /* Below the main navbar */
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(19, 47, 72, 0.15);
+  width: 100vw;
+  margin-left: calc(-60vw + 63%);
+}
+
+.category-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.category-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.category-links li a {
+  color: #132f48;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  letter-spacing: 0.3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.category-icon {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.category-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.category-links li a:hover {
+  color: #ffffff;
+  background-color: #132f48;
+  border-color: #132f48;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(19, 47, 72, 0.3);
+}
+
+.category-links li a:hover .category-label {
+  color: #ffffff;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .category-nav {
+    display: none;
+    padding: 0.5rem 0;
+    top: 70px; /* Adjust for mobile navbar height */
+  }
+
+  .category-container {
+    padding: 0 1rem;
+  }
+
+  .category-links {
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 0.5rem;
+  }
+
+  .category-links li a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-container {
+    padding: 0 0.5rem;
+  }
+
+  .category-links {
+    gap: 0.5rem;
+  }
+
+  .category-links li a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

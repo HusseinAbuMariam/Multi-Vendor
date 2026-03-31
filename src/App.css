@@ -1,0 +1,547 @@
+/* Global Reset - Remove all borders and outlines */
+* {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 25% 75%, rgba(255, 107, 53, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 75% 25%, rgba(255, 107, 53, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px, 60px 60px, 40px 40px, 80px 80px;
+  background-position: 0 0, 30px 30px, 10px 10px, 50px 50px;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark-mode body {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.15) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.15) 2px, transparent 2px),
+    radial-gradient(circle at 25% 75%, rgba(255, 107, 53, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 75% 25%, rgba(255, 107, 53, 0.12) 1px, transparent 1px);
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --navbar: #132f48;
+  --navbar-text: #ffffff;
+  --navbar-hover: #1a3a5c;
+  --button-hover: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode {
+  --bg: #0f1419;
+  --text: #ffffff;
+  --navbar: #132f48;
+  --navbar-text: #ffffff;
+  --navbar-hover: #1a3a5c;
+  --button-hover: rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #132f48;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.navbar-left .brand {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.br{
+  color: #8d8ca1;
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Search Bar Styles */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-radius: 25px;
+  padding: 0.5rem;
+  max-width: 300px;
+  width: 100%;
+  border: 1px solid #e9ecef;
+}
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #333333;
+  font-size: 1rem;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #6c757d;
+}
+
+.search-button {
+  background: #132f48;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #1a3a5c;
+}
+
+/* Desktop Navigation - Always visible on large screens */
+.desktop-nav {
+  display: flex !important;
+}
+
+/* Mobile Navigation - Hidden by default, shown via overlay */
+.mobile-nav {
+  display: none;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.nav-icon {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-icon:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--navbar-text);
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 998;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Navbar Mobile Styles */
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-left .brand {
+    font-size: 1.2rem;
+  }
+
+  .brand-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Hide category navigation on mobile */
+  .category-nav {
+    display: none;
+  }
+
+  /* Show hamburger menu on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Show mobile navigation in overlay */
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    right: -50%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--navbar);
+    width: 50%;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    z-index: 999;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .nav-links-mobile {
+    right: 0;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-menu-header span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--navbar-text);
+  }
+
+  .close-menu {
+    background: none;
+    border: none;
+    color: var(--navbar-text);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close-menu:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-nav li {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .mobile-nav li:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav li a {
+    font-size: 1.1rem;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--navbar-text);
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+  }
+
+  .mobile-nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--navbar-hover);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide all nav-items except first (hamburger) */
+  .navbar-right .nav-item:nth-child(n+2) {
+    display: none;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  /* App Container Mobile */
+  .app {
+    padding-top: 70px; /* Smaller navbar height on mobile */
+  }
+
+  main {
+    padding: 1rem;
+    min-height: calc(100vh - 70px);
+  }
+
+  /* Hero Section Mobile */
+  .hero {
+    min-height: 50vh;
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem;
+  }
+
+  .navbar-left .brand {
+    font-size: 1.1rem;
+  }
+
+  .brand-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .hero {
+    min-height: 40vh;
+    padding: 0.8rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-buttons {
+    max-width: 280px;
+  }
+
+  .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  main {
+    padding: 0.8rem;
+  }
+}
+
+.app {
+  padding-top: 80px; /* Adjust based on navbar height */
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+main {
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--navbar);
+  color: var(--navbar-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--navbar-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text);
+  border: 2px solid var(--navbar);
+}
+
+.btn-secondary:hover {
+  background-color: var(--navbar);
+  color: var(--navbar-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #0f1419; /* Dark background matching the navbar color */
+  color: #ffffff;
+}
+
+.dark-mode .navbar {
+  background-color: #132f48; /* Matching navbar color for dark mode */
+}
+
+.dark-mode .navbar-center .nav-links li a {
+  color: #ffffff;
+}
+
+.dark-mode .navbar-center .nav-links li a:hover {
+  color: #ff6b35; /* Orange on hover in dark mode */
+}
+
+.dark-mode .nav-icon {
+  color: #ffffff;
+}
+
+.dark-mode .nav-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .app {
+  /* Background now handled by body element */
+}
