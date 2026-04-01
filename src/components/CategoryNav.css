@@ -2,7 +2,7 @@
 .category-nav {
   background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
   border-bottom: 2px solid #132f48;
-  padding: 1rem 0;
+  padding: 2rem 0;
   position: sticky;
   top: 100px; /* Below the main navbar */
   z-index: 100;
