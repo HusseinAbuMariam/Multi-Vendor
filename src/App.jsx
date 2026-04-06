@@ -1,12 +1,14 @@
 import './App.css'
+import Fvendors from './components/fvendor/Fvendors'
 import Navbar from './components/Navbar'
-import Nero from './components/Nero/Nero'
+import Hero from './components/Hero/Hero'
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Nero/>
+      <Hero/>
+      <Fvendors/>
     </div>
   )
 }

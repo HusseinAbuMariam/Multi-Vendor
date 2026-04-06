@@ -3,20 +3,10 @@
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-   
 }
-
 body {
   margin: 0;
   padding: 0;
-  background-image:
-    radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.1) 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.1) 2px, transparent 2px),
-    radial-gradient(circle at 25% 75%, rgba(255, 107, 53, 0.08) 1px, transparent 1px),
-    radial-gradient(circle at 75% 25%, rgba(255, 107, 53, 0.08) 1px, transparent 1px);
-  background-size: 50px 50px, 60px 60px, 40px 40px, 80px 80px;
-  background-position: 0 0, 30px 30px, 10px 10px, 50px 50px;
-  background-attachment: fixed;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,7 +14,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .dark-mode body {
   background-image:
     radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.15) 2px, transparent 2px),
@@ -32,7 +21,6 @@ body {
     radial-gradient(circle at 25% 75%, rgba(255, 107, 53, 0.12) 1px, transparent 1px),
     radial-gradient(circle at 75% 25%, rgba(255, 107, 53, 0.12) 1px, transparent 1px);
 }
-
 :root {
   --bg: #ffffff;
   --text: #333333;
@@ -41,7 +29,6 @@ body {
   --navbar-hover: #1a3a5c;
   --button-hover: rgba(255, 255, 255, 0.2);
 }
-
 .dark-mode {
   --bg: #0f1419;
   --text: #ffffff;
@@ -50,118 +37,21 @@ body {
   --navbar-hover: #1a3a5c;
   --button-hover: rgba(255, 255, 255, 0.1);
 }
-
-/* Navbar Styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #132f48;
-  color: #ffffff;
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: background-color 0.3s;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.navbar-left .brand {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.br{
-  color: #8d8ca1;
-}
-
-.brand-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  filter: brightness(0.8) contrast(1.2);
-}
-
-.navbar-center {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex: 1;
-  justify-content: center;
-}
-
-/* Search Bar Styles */
-.search-container {
-  display: flex;
-  align-items: center;
-  background-color: #f8f9fa;
-  border-radius: 25px;
-  padding: 0.5rem;
-  max-width: 500px;
-  width: 100%;
-  border: 1px solid #e9ecef;
-}
-
-.search-input {
-  flex: 1;
-  background: none;
-  border: none;
-  color: #333333;
-  font-size: 1rem;
-  padding: 0.5rem;
-  outline: none;
-}
-
-.search-input::placeholder {
-  color: #6c757d;
-}
-
-.search-button {
-  background: #132f48;
-  border: none;
-  color: #ffffff;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-}
-
-.search-button:hover {
-  background-color: #1a3a5c;
-}
-
-/* Desktop Navigation - Always visible on large screens */
-.desktop-nav {
-  display: flex !important;
-}
-
 /* Mobile Navigation - Hidden by default, shown via overlay */
 .mobile-nav {
   display: none;
 }
-
 .navbar-right {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
-
 .nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
 }
-
 .nav-label {
   font-size: 0.75rem;
   color: #ffffff;
@@ -169,7 +59,6 @@ body {
   text-align: center;
   white-space: nowrap;
 }
-
 .nav-icon {
   background: none;
   border: none;
@@ -180,12 +69,10 @@ body {
   border-radius: 4px;
   transition: background-color 0.3s, transform 0.2s;
 }
-
 .nav-icon:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: scale(1.1);
 }
-
 /* Hamburger Menu */
 .hamburger {
   display: none;
@@ -195,7 +82,6 @@ body {
   background: none;
   border: none;
 }
-
 .bar {
   width: 25px;
   height: 3px;
@@ -204,20 +90,16 @@ body {
   transition: 0.3s;
   border-radius: 2px;
 }
-
 /* Hamburger Animation */
 .hamburger.active .bar:nth-child(1) {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
-
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.active .bar:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
 }
-
 /* Mobile Menu Overlay */
 .mobile-menu-overlay {
   position: fixed;
@@ -231,28 +113,23 @@ body {
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   z-index: 998;
 }
-
 .mobile-menu-overlay.active {
   opacity: 1;
   visibility: visible;
 }
-
 /* Mobile Styles */
 @media (max-width: 768px) {
   /* Navbar Mobile Styles */
   .navbar {
     padding: 1rem;
   }
-
   .navbar-left .brand {
     font-size: 1.2rem;
   }
-
   .brand-icon {
     width: 26px;
     height: 26px;
   }
-
   /* Hide category navigation on mobile */
   .category-nav {
     display: none;
@@ -262,7 +139,6 @@ body {
   .hamburger {
     display: flex;
   }
-
   /* Show mobile navigation in overlay */
   .mobile-nav {
     display: flex;
@@ -285,7 +161,6 @@ body {
   .nav-links-mobile {
     right: 0;
   }
-
   .mobile-menu-header {
     display: flex;
     justify-content: space-between;
@@ -363,7 +238,7 @@ body {
 
   /* App Container Mobile */
   .app {
-    padding-top: 70px; /* Smaller navbar height on mobile */
+    padding-top: 80px; /* Smaller navbar height on mobile */
   }
 
   main {
@@ -372,10 +247,14 @@ body {
   }
 
   /* Hero Section Mobile */
-  .hero {
-    min-height: 50vh;
-    padding: 1rem;
-  }
+.hero {
+  width: 100%;
+  padding: 5rem 0;
+  position: relative; /* ✅ FIXED */
+  overflow: hidden;
+  background: #f9fafb;
+  margin-top: 120px; /* space under navbar */
+}
 
   .hero-title {
     font-size: 2rem;
@@ -419,11 +298,6 @@ body {
     height: 26px;
   }
 
-  .hero {
-    min-height: 40vh;
-    padding: 0.8rem;
-
-  }
 
   .hero-title {
     font-size: 1.8rem;
@@ -444,372 +318,7 @@ body {
     padding: 0.8rem;
   }
 }
-
-.app {
-  padding-top: 80px; /* Adjust based on navbar height */
-  transition: background-color 0.3s, color 0.3s;
-  background-color: var(--bg);
-  color: var(--text);
-}
-
 main {
   padding: 2rem;
   min-height: calc(100vh - 80px);
-}
-
-/* =========================
-   HERO BACKGROUND
-========================= */
-/* =========================
-   HERO SECTION
-========================= */
-.hero {
-  width: 100%;
-  padding: 5rem 0;
-  position: relative;
-  overflow: hidden;
-  background: #f9fafb;
-  position: fixed;
-  top: 200px; /* Below the navbar and category nav */
-  left: 0;
-  right: 0;
-}
-
-/* =========================
-   LEFT + RIGHT COLOR ONLY
-========================= */
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 45%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* LEFT SIDE */
-.hero::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(19, 47, 72, 0.12),
-    transparent
-  );
-}
-
-/* RIGHT SIDE */
-.hero::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    rgba(13, 29, 53, 0.12),
-    transparent
-  );
-}
-
-/* =========================
-   CONTAINER
-========================= */
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-
-  position: relative;
-  z-index: 1;
-}
-
-/* =========================
-   LEFT CONTENT
-========================= */
-.hero-content {
-  flex: 1;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
-
-/* =========================
-   RIGHT MEDIA
-========================= */
-.hero-media {
-  flex: 1;
-  display: flex;
-  gap: 1rem;
-}
-
-.hero-big {
-  flex: 2;
-  min-height: 400px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-}
-
-.hero-side {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.hero-small {
-  flex: 1;
-  min-height: 190px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-}
-
-/* =========================
-   BUTTON
-========================= */
-.btn {
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary {
-  background: #ff6b35;
-  color: white;
-
-  animation: bounce 2.5s infinite, neonPulse 2s infinite;
-  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
-}
-
-/* Bounce */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Neon Pulse */
-@keyframes neonPulse {
-  0% {
-    box-shadow: 0 0 10px rgba(255, 107, 53, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(255, 107, 53, 0.7);
-    transform: scale(1.05);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(255, 107, 53, 0.4);
-  }
-}
-
-/* Ripple */
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.4s;
-}
-
-.btn-primary:active::after {
-  width: 300px;
-  height: 300px;
-  opacity: 0;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-  }
-
-  .hero-media {
-    flex-direction: column;
-  }
-
-  .hero-big {
-    min-height: 250px;
-  }
-}
-
-/* =========================
-   CONTAINER
-========================= */
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* =========================
-   LEFT CONTENT
-========================= */
-.hero-content {
-  flex: 1;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #132f48;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
-.off {
-  color: #ff6b35;
-  font-size: 1.4rem;
-}
-
-/* =========================
-   IMAGES RIGHT
-========================= */
-.hero-media {
-  flex: 1;
-  display: flex;
-  gap: 1rem;
-}
-
-.hero-big {
-  flex: 2;
-  min-height: 400px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-}
-
-.hero-side {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.hero-small {
-  flex: 1;
-  min-height: 190px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-}
-
-/* =========================
-   BUTTON BASE
-========================= */
-.btn {
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  position: relative;
-  overflow: hidden;
-}
-
-/* =========================
-   🔥 NEON + BOUNCE + PULSE
-========================= */
-.btn-primary {
-  background: #ff6b35;
-  color: #fff;
-
-  animation: bounce 2.5s infinite, neonPulse 2s infinite;
-
-  box-shadow:
-    0 0 10px rgba(255, 107, 53, 0.4),
-    0 0 20px rgba(255, 107, 53, 0.2);
-}
-
-/* Bounce */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Neon Pulse */
-@keyframes neonPulse {
-  0% {
-    box-shadow:
-      0 0 10px rgba(255, 107, 53, 0.4),
-      0 0 20px rgba(255, 107, 53, 0.2);
-  }
-  50% {
-    box-shadow:
-      0 0 20px rgba(255, 107, 53, 0.8),
-      0 0 40px rgba(255, 107, 53, 0.5);
-    transform: scale(1.05);
-  }
-  100% {
-    box-shadow:
-      0 0 10px rgba(255, 107, 53, 0.4),
-      0 0 20px rgba(255, 107, 53, 0.2);
-  }
-}
-
-/* =========================
-   RIPPLE EFFECT
-========================= */
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: width 0.4s ease, height 0.4s ease;
-}
-
-.btn-primary:active::after {
-  width: 300px;
-  height: 300px;
-  opacity: 0;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-  }
-
-  .hero-media {
-    flex-direction: column;
-  }
-
-  .hero-big {
-    min-height: 250px;
-  }
 }
