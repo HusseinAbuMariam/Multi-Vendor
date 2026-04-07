@@ -21,7 +21,7 @@ const vendors = [
 
 const Fvendors = () => {
   return (
-    <div className="mt-[40%] py-16 px-6">
+    <div className=" w-screen ml-[calc(-50vw+49.3%)] bg-gray-50 py-20 mt-[40%] ">
       
       {/* Title */}
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
