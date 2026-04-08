@@ -1,24 +1,19 @@
 import './App.css'
-import Fvendors from './components/fvendor/Fvendors'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero/Hero'
-import Popularcategory from './components/popularcategory/Popularcategory'
-import Footer from './components/footer/Footer'
-import LatestProducts from './components/Latest Products/Latest Products'
-import Features from './components/Features/Features'
-
-
-
+import Home from './components/Home/Home'
+import { HashRouter,Routes,Route } from 'react-router-dom'
+import Products from './components/Products/Products'
+import PageNotFound from './components/Not Found/PageNotFound'
 function App() {
   return (
     <div>
-      <Navbar />
-      <Hero/>
-      <Fvendors/>
-      <Popularcategory/>
-      <LatestProducts/>
-      <Features/>
-      <Footer/>
+      <HashRouter>
+        <Routes>
+           <Route path='/' element={<Home/>}/>
+           <Route path='/products' element={<Products/>}/>
+           <Route path='*' element={<PageNotFound/>}/>
+        </Routes>
+      </HashRouter>
+
     </div>
   )
 }

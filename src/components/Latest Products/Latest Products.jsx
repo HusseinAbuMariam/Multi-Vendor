@@ -17,14 +17,14 @@ const products = [
   },
   {
     name: "Leather Jacket",
-    desc: "Stylish and durable leather jacket.",
+    desc: "Stylish, durable, and luxurious leather jacket.",
     price: "$199.99",
     oldPrice: "$249.99",
     img: "src/photo/Leather Jacket.png",
   },
   {
     name: "Backpack",
-    desc: "Perfect for travel and daily use.",
+    desc: "Ideal for devices, everyday use and travel.",
     price: "$49.99",
     oldPrice: "$69.99",
     img: "src/photo/Backpack.png",
@@ -88,7 +88,7 @@ const LatestProducts = () => {
                 </div>
 
                 {/* Button */}
-                <button className="mt-auto bg-[#132f48] text-white py-2 rounded-lg hover:bg-[#f4a261] hover:text-[#132f48] transition">
+                <button className=" bg-[#132f48] text-white py-2 rounded-lg hover:bg-[#f4a261] hover:text-[#132f48] transition">
                   Add to Cart
                 </button>
               </div>

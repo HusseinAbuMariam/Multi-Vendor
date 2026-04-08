@@ -1,46 +1,46 @@
 import React from 'react'
 import './CategoryNav.css'
-
+import { Link } from "react-router-dom";
 function CategoryNav() {
   return (
     <nav className="category-nav">
       <div className="category-container">
         <ul className="category-links">
           <li>
-            <a href="#all">
+            <Link to="/products">
               <span className="category-icon">🏪</span>
               <span className="category-label">All Categories</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#fashion">
+            <Link to="/products/fashion">
               <span className="category-icon">👕</span>
               <span className="category-label">Fashion</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#electronics">
+            <Link to="/products/electronics">
               <span className="category-icon">📱</span>
               <span className="category-label">Electronics</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#home">
+            <Link to="/products/home">
               <span className="category-icon">🏠</span>
               <span className="category-label">Home & Living</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#beauty">
+            <Link to="/products/beauty">
               <span className="category-icon">💄</span>
               <span className="category-label">Beauty</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#toys">
+            <Link to="/products/toys">
               <span className="category-icon">🎮</span>
               <span className="category-label">Toys</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

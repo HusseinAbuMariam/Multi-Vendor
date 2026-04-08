@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CategoryNav from "./CategoryNav";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,11 +40,11 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <button>🏠 Home</button>
-          <button>❤️ Wishlist</button>
-          <button>📞 Contact</button>
-          <button>🎁 Offers</button>
-          <button>👤 Account</button>
+          <Link to="/">🏠 Home</Link>
+          <Link to="/wishlist">❤️ Wishlist</Link>
+          <Link to="/contact">📞 Contact</Link>
+          <Link to="/offers">🎁 Offers</Link>
+          <Link to="/account">👤 Account</Link>
         </div>
 
         {/* Mobile Button */}
@@ -82,15 +83,11 @@ const Navbar = () => {
 
           {/* Links */}
           <div className="flex flex-col gap-4">
-            <a href="#home" onClick={closeMenu}>🏠 Home</a>
-            <a href="#wishlist" onClick={closeMenu}>❤️ Wishlist</a>
-            <a href="#contact" onClick={closeMenu}>📞 Contact</a>
-            <hr className="border-white/30" />
-            <a href="#all" onClick={closeMenu}>🏪 All Categories</a>
-            <a href="#fashion" onClick={closeMenu}>👕 Fashion</a>
-            <a href="#electronics" onClick={closeMenu}>📱 Electronics</a>
-            <a href="#home-living" onClick={closeMenu}>🏠 Home & Living</a>
-            <a href="#beauty" onClick={closeMenu}>💄 Beauty</a>
+            <Link to="/" onClick={closeMenu}>🏠 Home</Link>
+            <Link to="/wishlist" onClick={closeMenu}>❤️ Wishlist</Link>
+            <Link to="/contact" onClick={closeMenu}>📞 Contact</Link>
+            <Link to="/offers" onClick={closeMenu}>🎁 Offers</Link>
+            <Link to="/account" onClick={closeMenu}>👤 Account</Link>
           </div>
         </div>
       </div>
