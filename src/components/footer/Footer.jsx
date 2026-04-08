@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";  
 const Footer = () => {
   return (
     <footer className="w-screen ml-[calc(-50vw+49.3%)] bg-[#132f48] text-white pt-16 pb-8 mt-20">
@@ -50,10 +50,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4 text-lg">Categories</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-[#f4a261]">Electronics</a></li>
-              <li><a href="#" className="hover:text-[#f4a261]">Fashion</a></li>
-              <li><a href="#" className="hover:text-[#f4a261]">Beauty</a></li>
-              <li><a href="#" className="hover:text-[#f4a261]">Gaming</a></li>
+              <li><Link to="/products/electronics" className="hover:text-[#f4a261]">Electronics</Link></li>
+              <li><Link to="/products/fashion" className="hover:text-[#f4a261]">Fashion</Link></li>
+              <li><Link to="/products/beauty" className="hover:text-[#f4a261]">Beauty</Link></li>
+              <li><Link to="/products/toys" className="hover:text-[#f4a261]">Gaming</Link></li>
             </ul>
           </div>
 
