@@ -9,7 +9,7 @@ import Features from '../Features/Features'
 import Stores from '../Stores/Stores'
 const Home = () => {
   return (
-    <>
+    <div id='Home'>
       <Navbar />
       <Hero />
       <Fvendors />
@@ -18,7 +18,7 @@ const Home = () => {
       <Features />
       <Stores/>
       <Footer />
-    </>
+    </div>
   )
 }
 

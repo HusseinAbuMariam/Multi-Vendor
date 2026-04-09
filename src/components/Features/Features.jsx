@@ -2,7 +2,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <section className="bg-white py-20">
+    <section id="features" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}

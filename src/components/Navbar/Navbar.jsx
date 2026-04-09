@@ -40,10 +40,30 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/">🏠 Home</Link>
+          <Link to="/" onClick={() => {
+                  setTimeout(() => {
+                    const section = document.getElementById("Home");
+                    if (section) {
+                      section.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }, 100);
+                }}>🏠 Home</Link>
+          <Link
+                to="/"
+                onClick={() => {
+                  setTimeout(() => {
+                    const section = document.getElementById("features");
+                    if (section) {
+                      section.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }, 100);
+                }}
+              >
+                 💡 Features
+          </Link>
           <Link to="/wishlist">❤️ Wishlist</Link>
           <Link to="/contact">📞 Contact</Link>
-          <Link to="/offers">🎁 Offers</Link>
+          <Link to="/FAQ">❓ FAQ</Link>
           <Link to="/account">👤 Account</Link>
         </div>
 
@@ -84,9 +104,10 @@ const Navbar = () => {
           {/* Links */}
           <div className="flex flex-col gap-4">
             <Link to="/" onClick={closeMenu}>🏠 Home</Link>
+            <Link to="/features" onClick={closeMenu}>💡 Features</Link>
             <Link to="/wishlist" onClick={closeMenu}>❤️ Wishlist</Link>
             <Link to="/contact" onClick={closeMenu}>📞 Contact</Link>
-            <Link to="/offers" onClick={closeMenu}>🎁 Offers</Link>
+            <Link to="/offers" onClick={closeMenu}>❓ FAQ</Link>
             <Link to="/account" onClick={closeMenu}>👤 Account</Link>
           </div>
         </div>
