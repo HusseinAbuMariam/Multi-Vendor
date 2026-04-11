@@ -1,6 +1,6 @@
 import React from "react";
-
-const Nero = () => {
+import { Link } from "react-router-dom";
+const Hero = () => {
   return (
      <section className="absolute overflow-hidden py-10 w-full  left-0 right-0 bg-[radial-gradient(circle_at_top_left,rgba(19,47,72,0.12),transparent_45%),radial-gradient(circle_at_top_right,rgba(255,120,60,0.18),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(255,107,53,0.12),transparent_50%),radial-gradient(circle_at_bottom_right,rgba(19,47,72,0.06),transparent_50%)] ">
         {/* CONTENT */}
@@ -19,10 +19,16 @@ const Nero = () => {
             </span>{" "}
             on Fashion, Electronics & More.
           </p>
-
-          <button className="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:scale-105 transition">
-            Shop Now
-          </button>
+          <Link to="/products" onClick={() => {
+                  setTimeout(() => {
+                    const section = document.getElementById("products");
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }, 100);
+                }}>
+            <button className="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:scale-105 transition">
+              Shop Now
+            </button>
+          </Link>
         </div>
 
         {/* RIGHT */}
@@ -61,4 +67,4 @@ const Nero = () => {
   );
 };
 
-export default Nero;
+export default Hero;
