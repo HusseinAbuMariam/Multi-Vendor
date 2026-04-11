@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import { useNavigate, Link } from "react-router-dom";
 
-const Account = () => {
+const Register = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
 
-    if (email && password) {
-      localStorage.setItem("user", JSON.stringify({ email }));
+    if (name && email && password) {
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ name, email })
+      );
       navigate("/");
     }
   };
@@ -29,20 +33,32 @@ const Account = () => {
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <div className="w-14 h-14 rounded-full border flex items-center justify-center bg-gray-100">
-                🛒
+                🛍️
               </div>
             </div>
 
             <h1 className="text-2xl font-bold text-[#132f48]">
-              Welcome Back!
+              Create Account
             </h1>
             <p className="text-gray-500 text-sm">
-              Sign in to continue your journey
+              Join us and start your shopping journey
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleRegister} className="space-y-6">
+
+            {/* Name */}
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full border rounded-md px-10 py-2 outline-none focus:ring-2 focus:ring-[#132f48]"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <span className="absolute left-3 top-2.5 text-gray-400">👤</span>
+            </div>
 
             {/* Email */}
             <div className="relative">
@@ -77,32 +93,20 @@ const Account = () => {
               </button>
             </div>
 
-            {/* Options */}
-            <div className="flex justify-between items-center text-sm">
-              <label className="flex items-center gap-2">
-                <input type="checkbox" />
-                Remember me
-              </label>
-
-              <a href="#" className="hover:underline text-[#132f48]">
-                Forgot password?
-              </a>
-            </div>
-
             {/* Button */}
             <button
               type="submit"
               className="w-full bg-[#132f48] text-white py-2 rounded-md hover:bg-[#f4a261] hover:text-[#132f48] transition"
             >
-              Sign In
+              Create Account
             </button>
           </form>
 
           {/* Footer */}
           <p className="text-center text-sm mt-6">
-            Don't have an account?{" "}
-            <Link to="/Register" className="underline cursor-pointer">
-              Register
+            Already have an account?{" "}
+            <Link to="/account" className="underline cursor-pointer">
+              Sign In
             </Link>
           </p>
 
@@ -112,4 +116,4 @@ const Account = () => {
   );
 };
 
-export default Account;
+export default Register;

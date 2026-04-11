@@ -6,8 +6,8 @@ import PageNotFound from './components/Not Found/PageNotFound'
 import Features from './components/Features/Features'
 import Faq from './components/FAQ/Faq'
 import Contact from './components/contact/Contact'
-import Signup from './components/SginUp/SginUp'
-
+import Account from './components/Account/Account'
+import Register from './components/Account/Register'
 function App() {
   return (
     <div>
@@ -18,7 +18,8 @@ function App() {
           <Route path='/features' element={<Features />} />
           <Route path='/FAQ' element={<Faq />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/signup' element={<Signup />} />
+          <Route path='/account' element={<Account />} />
+          <Route path='/Register' element={<Register />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </HashRouter>
