@@ -53,7 +53,7 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="Full Name"
-                className="w-full border rounded-md px-10 py-2 outline-none focus:ring-2 focus:ring-[#132f48]"
+                className="w-full border  bg-[#132f48] text-white rounded-md px-10 py-2 outline-none focus:ring-2 focus:ring-[#132f48]"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -65,7 +65,7 @@ const Register = () => {
               <input
                 type="email"
                 placeholder="me@example.com"
-                className="w-full border rounded-md px-10 py-2 outline-none focus:ring-2 focus:ring-[#132f48]"
+                className="w-full border  bg-[#132f48] text-white rounded-md px-10 py-2 outline-none focus:ring-2 focus:ring-[#132f48]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -77,7 +77,7 @@ const Register = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                className="w-full border rounded-md px-10 py-2 outline-none focus:ring-2 focus:ring-[#132f48]"
+                className="w-full border   bg-[#132f48] text-white rounded-md px-10 py-2 outline-none focus:ring-2 focus:ring-[#132f48]"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
